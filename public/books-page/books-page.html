@@ -59,26 +59,27 @@
     </section>
     <section id="main" class="main-wrapper">
         <div class="container">
-            <div id="content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <script id="pattern" type="text/template">
-                    <div data-book-id="{id}" class="book_item col-xs-6 col-sm-3 col-md-2 col-lg-2">
-                        <div class="book">
-                            <a href="/book/{id}"><img src="/books-page/books-page_files/{id}.jpg" alt="{title}">
-                                <div data-title="{title}" class="blockI">
-                                    <div data-book-title="{title}" class="title size_text">{title}</div>
-                                    <div data-book-author="{author}" class="author">{author}</div>
-                                </div>
-                            </a>
-                            <a href="/book/{id}">
-                                <button type="button" class="details btn btn-success">Читать</button>
-                            </a>
-                        </div>
-                    </div>
-                </script>
-            </div>
+            <div id="content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
         </div>
-
-<center>оопс... в этом хтмл не реализованы кнопки "вперед" и "назад", а книг на странице должно быть не больше 20</center>
+        <script id="pattern" type="text/template">
+            <div data-book-id="{id}" class="book_item col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                <div class="book">
+                    <a href="/book/{id}"><img src="/books-page/books-page_files/{id}.jpg" alt="{title}">
+                        <div data-title="{title}" class="blockI">
+                            <div data-book-title="{title}" class="title size_text">{title}</div>
+                            <div data-book-author="{author}" class="author">{author}</div>
+                        </div>
+                    </a>
+                    <a href="/book/{id}">
+                        <button type="button" class="details btn btn-success">Читать</button>
+                    </a>
+                </div>
+            </div>
+        </script>
+        <div id="pagination" style="display: flex;justify-content: center;align-items: center;">
+            <button id="prevPage" class="btn btn-primary" style="display: none; margin-right: 40px">Назад</button>
+            <button id="nextPage" class="btn btn-primary" style="display: none; margin-left: 40px">Вперед</button>
+        </div>
 
     </section>
     <section id="footer" class="footer-wrapper">
@@ -129,6 +130,8 @@
     <script src="/books-page/books-page_files/libs.min.js"></script>
     <script src="/books-page/books-page_files/common.js"></script>
     <script src="/books-page/books-page_files/index.js"></script>
+    <script src="/books-page/books-page_files/search.js"></script>
+    <script src="/books-page/books-page_files/sidebar.js"></script>
 </body>
 
 </html>

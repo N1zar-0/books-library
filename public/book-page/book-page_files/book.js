@@ -7,9 +7,9 @@ var bookId;
 
 doAjaxQuery('GET', '/api/v1/books/' + pathname.substr(bookIdPosition), null, function(res) {
     view.fillBookInfo(res.data);
+    bookId = res.data.id;
     if (res.data.event) {
         isBookInUse = true;
-        bookId = res.data.id;
     }
 });
 
@@ -51,6 +51,7 @@ doAjaxQuery('GET', '/api/v1/books/' + pathname.substr(bookIdPosition), null, fun
 // });
 /*------------------ Sending email by clicking on the button ----------------*/
 $('.btnBookID').click(function(event) {
+    fetch(`/api/v1/books/${bookId}/increment-purchases`, {method: 'POST'});
     // var email = $('.orderEmail').val();
     // var isEmail = controller.validateEmail(email);
     // if (isEmail) {

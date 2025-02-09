@@ -20,8 +20,7 @@ function changeHistoryStateWithParams(action, filter, offset) {
     }
 
     offset = parseInt(offset);
-    var count = offset ? global.number_of_items_onscroll : global.items_limit_on_page_load;
-    var queryString = '?filter=' + filter + '&count=' + (offset + count);
+    var queryString = '?filter=' + filter + '&offset=' + offset;
     if (action === 'push') {
         window.history.pushState('','',queryString);
     } else {
